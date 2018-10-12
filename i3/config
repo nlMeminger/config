@@ -169,14 +169,15 @@ exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelt
 focus_follows_mouse no
 
 # Default workspaces
-assign [class="Thunderbird"] 2
-assign [class="Rhythmbox"] 3
-assign [class="Spotify"] 3
-assign [class="HexChat"] 4
-assign [class="Riot"] 4
-assign [class="Slack"] 4
-assign [class="Telegram"] 4
-
+assign [class="firefox"] 1
+#assign [class="Thunderbird"] 2
+#assign [class="Rhythmbox"] 3
+assign [class="Spotify"] 5
+#assign [class="HexChat"] 4
+#assign [class="Riot"] 4
+#assign [class="Slack"] 4
+assign [class="Telegram"] 3
+assign [class='terminal'] 2
 
 ########################
 # Control key mappings #
@@ -208,7 +209,7 @@ bindsym XF86AudioPrev exec rhythmbox-client --no-start --previous
 exec --no-startup-id feh --bg-scale /home/nathaniel/Pictures/Wallpapers/wallpaper1.PNG
 
 # xfce4-power-manager: Low battery notifications
-#exec xfce4-power-manager
+exec xfce4-power-manager
 
 # dropbox: Start daemon
 #exec dropbox start
@@ -228,6 +229,10 @@ bindsym $mod+Control+s exec $HOME/.config/i3/i3exit.sh suspend
 exec xautolock -time 15 -locker '$HOME/.config/i3/fuzzy_lock.sh' &
 
 # Standard desktop applications I always use on start
-#exec firefox
-#exec thunderbird
+exec firefox
+exec telegram-desktop
+exec i3-sensible-terminal
 
+
+
+exec xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1
