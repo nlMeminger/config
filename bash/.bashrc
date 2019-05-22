@@ -117,16 +117,22 @@ if ! shopt -oq posix; then
 fi
 
 
-
+#Python enviornment variables
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS=' -p /usr/bin/python3 '
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
 
 
 #Custom alias
-alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E
-"state|time\ to\ empty|time\ to\ full|percentage"'
-alias ls='ls -l'
+alias ls='ls -la'
+alias sl='ls | rev'
 alias reloadnet='sudo systemctl reload NetworkManager.service'
-alias fixlaptop='bash ~/.screenlayout/laptop_only.sh'
-alias fixscreen='bash ~/.screenlayout/laptop_and_monitor.sh'
-alias fixtv='bash ~/.screenlayout/laptop_and_tv.sh'
+alias fixscreen='bash ~/.screenlayout/fixscreen.sh'
 alias shut='sudo shutdown -h now'
 alias reload='sudo shutdown -r now'
+alias open='xdg-open'
+alias fixsound='sudo killall pulseaudio;sudo alsa force-reload'
+alias chback='feh --randomize --bg-fill $HOME/Pictures/Wallpapers/current/*'
+alias sound='pavucontrol'
